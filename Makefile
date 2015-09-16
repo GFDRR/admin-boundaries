@@ -58,3 +58,6 @@ capitals-osm.txt: capitals-osm.json
 
 capitals-wikipedia.txt:
 	curl -o $@ "https://docs.google.com/spreadsheets/d/1FniK9JaWQmmQrt_PfUlTnI1pXk23kz4wnEH3jFiF8Js/pub?gid=0&single=true&output=tsv"
+
+test-capitals.txt: capitals-wikipedia.txt
+	python crossvalidation.py $<
