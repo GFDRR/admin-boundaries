@@ -8,8 +8,8 @@ with codecs.open(sys.argv[1], encoding="UTF-8") as raw_data:
 
     random.shuffle(data)
 
-    test_data = data[:50]
-    validation_data = data[50:]
+    test_data = data[:len(data)/2]
+    validation_data = data[len(data)/2:]
 
     with open('test-capitals.txt', 'w') as test_file:
         test_file.writelines("".join(test_data).encode('utf8'))

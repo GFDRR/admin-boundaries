@@ -61,3 +61,6 @@ capitals-wikipedia.txt:
 
 test-capitals.txt: capitals-wikipedia.txt
 	python crossvalidation.py $<
+
+measure-thor-test.txt: test-capitals.txt
+	python measure_thor.py $< >> $@
